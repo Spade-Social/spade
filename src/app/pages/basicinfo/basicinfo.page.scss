@@ -1,0 +1,108 @@
+.onboarding-content{
+    height: 90%;
+    padding-top: 30px;
+    // overflow-y: scroll;
+}
+
+.previous-step{
+    height: 10%;
+}
+
+ion-content{
+    --padding-bottom: 18px;
+    --padding-end: 18px;
+    --padding-start: 18px;
+    --padding-top: 18px;
+    ion-item{
+      border: 1px solid #BEBEBE;
+      border-radius: 10px;
+      font-size: 18px;
+      margin: 8px 0px;
+
+    }
+}
+
+ion-button{
+    --height: 53px;
+    --margin-bottom: 10px;
+}
+
+ion-label{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+ion-input{
+    margin: auto;
+    margin-top: 25px;
+    border-bottom: solid 1px black;
+}
+
+ion-input.short{
+    max-width: 80%;
+}
+
+ion-select{
+    margin-top: 25px;
+    border-bottom: solid 1px black;
+    --border-color: black;
+}
+
+.onboarding-step{
+    text-align: center;
+}
+
+.onboarding-step p{
+    text-align: left;
+}
+.phone-input{
+    // margin-top:25px;
+}
+
+.onboarding-button{
+    margin-bottom: 10px;
+    height: 53px;
+}
+
+.gender-picker{
+    margin-top: 50%;
+}
+
+.gender-picker .gender-picker-item{
+    padding-top: 10px;
+    max-width: 90px;
+    height: 90px;
+    border: solid 1px #B8B6B6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin:auto;
+}
+
+.gender-picker .gender-picker-item img{
+    max-height: 54px;
+}
+
+.interest-picker{
+    margin-top: 15%;
+}
+
+.interest-picker .interest-row{
+    margin-bottom: 34px;
+}
+
+.interest-picker .interest-picker-item{
+    padding-top: 10px;
+    max-width: 146px;
+    height: 137px;
+    border: solid 1px #B8B6B6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+   margin:auto;
+}
+
+.interest-picker-item img{
+    height: 76px;
+    margin-bottom: 16px;
+}

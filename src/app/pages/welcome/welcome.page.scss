@@ -1,0 +1,87 @@
+ion-content{
+
+  .main_div{
+    height: 65vh;
+
+    display: flex;
+
+  align-items: center;
+  .df{
+    width:100%;
+    text-align: center;
+    //border:1px solid black;
+    padding: 12px;
+    ion-grid{
+      // justify-items: center;
+      // justify-self: center;
+          text-align: center;
+          //border: #000000 1px solid;
+          display: flex;
+        justify-content: center;
+        align-items: center;
+          ion-row{
+            width: 70%;
+            //border: #000000 1px solid;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            .logo-text{
+              font-size: 40px;
+              text-align: center;
+              color: #000000;
+              //border: #000000 1px solid;
+              letter-spacing: 0.12em;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              margin-left:  20px;
+              margin-right: -12px;
+            }
+            img{
+              height: 50px;
+              // margin-left:  -12px;
+
+              //border: #000000 1px solid;
+            }
+            .logo_under{
+              font-size: 18px;
+              // margin: -12px 0 0 -12px;
+              font-weight: 500;
+              letter-spacing: 0.04em;
+              line-height: 36px;
+              text-align: center;
+            }
+          }
+
+        }
+  }
+
+
+  }
+
+  .car{
+    padding: 12px;
+    ion-button{
+      margin-bottom: 20px;
+      font-size: 20px;
+      text-transform: capitalize;
+      --border: none;
+      --padding: 12px 0px;
+      --border-radius: 12px;
+    }
+    p{
+      margin-top: 20px;
+      padding: 0 20px;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 18px;
+      span{
+
+        font-weight: 500;
+      }
+    }
+  }
+}

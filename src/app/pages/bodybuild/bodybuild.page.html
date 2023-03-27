@@ -1,0 +1,92 @@
+<ion-content>
+  <div class="onboarding-content">
+    <div class="previous-step">
+      <ion-icon *ngIf="current_step > 1" size="large" name="chevron-back-outline" (click)="goToPrevious()"></ion-icon>
+    </div>
+
+    <div *ngIf="current_step == 1" class="onboarding-step">
+      <ion-label>What's your height?</ion-label>
+      <ion-row>
+        <ion-col class="height-image">
+          <img src="assets/images/height-man.svg" alt="Height"><br>
+        </ion-col>
+        <ion-col>
+          <!-- <ion-range [min]="10" [max]="250" [value]="160" [pin]="true" [ticks]="true" [snaps]="true"></ion-range> -->
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div *ngIf="current_step == 2" class="onboarding-step">
+      <ion-label>What's your build?</ion-label>
+      <div class="interest-picker">
+        <ion-row class="interest-row">
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/man-slim.svg" alt="Build slim"><br>
+              <span>Slim</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/man-athletic.svg" alt="Build athletic"><br>
+              <span>Athletic</span>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/man-husky.svg" alt="Build husky"><br>
+              <span>Husky</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/man-brawny.svg" alt="Build brawny"><br>
+              <span>Brawny</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+    <div *ngIf="current_step == 3" class="onboarding-step">
+      <ion-label>What build are you looking for?</ion-label>
+      <div class="interest-picker">
+        <ion-row class="interest-row">
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/woman-petite.svg" alt="Build petite"><br>
+              <span>Petite</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/woman-athletic.svg" alt="Build athletic"><br>
+              <span>Atheltic</span>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/woman-curvy.svg" alt="Build curvy"><br>
+              <span>Curvy</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item ">
+              <img src="assets/images/woman-husky.svg" alt="Build husky"><br>
+              <span>Husky</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+  </div>
+  
+
+  <ion-button class="onboarding-button" expand="block" shape="round" (click)="goToNext()">Next</ion-button>
+
+</ion-content>

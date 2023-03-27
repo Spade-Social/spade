@@ -1,0 +1,64 @@
+
+<ion-content [fullscreen]="true">
+  <div class="main_div">
+    <div class="df">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="logo-text">SPADE</ion-col>
+          <ion-col>
+            <img src="/assets/icon/favicon.png"  alt="">
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+      <span class="logo_under">A different experience...</span>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="car">
+    <form>
+      <div class="mb-4">
+      <ion-label position="stacked">Email or Phone Number</ion-label>
+      <ion-item lines="none">
+
+        <ion-input  placeholder="Enter your email or phone no."  type="email" name="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+    </div>
+      <div class="mb-4">
+        <ion-label position="stacked" >Password</ion-label>
+        <ion-item lines="none">
+
+          <ion-input  placeholder="Password" type="{{show ? 'text' : 'password'}}" name="password" [(ngModel)]="password" ></ion-input>
+          <ion-icon slot="end" (click)="showPass()" name="{{show ? 'eye-off-outline' : 'eye-outline'}}"></ion-icon>
+        </ion-item>
+      </div>
+<div class="mb-3">
+  <ion-grid class="px-2">
+    <ion-row class="d-flex">
+      <ion-col>
+        <div class="cgh">
+          <ion-checkbox mode="md" slot="start" style="margin-right: 4px;"></ion-checkbox>
+          <label style="font-size: 14px; text-align:right;">Remember me</label>
+        </div>
+      </ion-col>
+      <ion-col style="font-size: 14px; text-align:right;" >
+        <div class="mt-1">
+          <span  >Forgot Password?</span>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+      <div class="mb-1">
+        <ion-button expand="block" size="large"  (click)="login()">Login</ion-button>
+      </div>
+
+    </form>
+     <p routerLink="/reg">Don't have an account? <span class="inside_text">Create Account</span></p>
+  </div>
+</ion-content>

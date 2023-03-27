@@ -1,0 +1,89 @@
+<ion-content>
+  <div class="main_div" *ngIf="current === 1">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              size="large"
+              (click)="back()"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+            ><span class="text-center" style="font-size: 20px"
+              >Choose a question</span
+            ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="my-5 px-2">
+        <div
+          class="main"
+          style="height: 60vh; min-height: 60vh; max-height: 60vh"
+        >
+          <div class="row g-2">
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="1" />
+              <label class="lbl-chkssss" for="1">
+                My unpopular opinion is
+              </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="2" />
+              <label class="lbl-chkssss" for="2"> Go-to-dish to cook </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="3" />
+              <label class="lbl-chkssss" for="3"> Topics to debate </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="4" />
+              <label class="lbl-chkssss" for="4">
+                One thing I cannot live without
+              </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="5" />
+              <label class="lbl-chkssss" for="5">
+                A country I'd love to visit
+              </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="6" />
+              <label class="lbl-chkssss" for="6">
+                Last movie I saw in the cinema
+              </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="7" />
+              <label class="lbl-chkssss" for="7">
+                My biggest celebrity crush
+              </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="8" />
+              <label class="lbl-chkssss" for="8"> My go-to karaoke song </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="9" />
+              <label class="lbl-chkssss" for="9"> Marvel or DC fan </label>
+            </div>
+            <div class="col-12">
+              <input class="check_bx" name="question" type="radio" id="10" />
+              <label class="lbl-chkssss" for="10">
+                My absolute dream job
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="btn_down">
+    <div class="">
+      <ion-button (click)="Next()" expand="block" size="large">Next</ion-button>
+    </div>
+  </div>
+</ion-content>

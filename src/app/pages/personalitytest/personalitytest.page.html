@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+
+  <div class="personality_test">
+    <div class="">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">
+            <ion-icon (click)="back()" size="large" name="chevron-back-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="question-count">
+          <ion-col>
+            <p>Question 1/25</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-progress-bar [value]="0.04"></ion-progress-bar>
+          </ion-col>
+        </ion-row>
+        <ion-row class="question">
+          <ion-col>
+            <h4>You regularly make new friends </h4>
+          </ion-col>
+        </ion-row>
+        <ion-row class="options">
+          <ion-col>
+            <ion-list>
+              <ion-radio-group value="question_options" (ionChange)="selectOption($event)">
+                <ion-item lines="none" [color]="selected_option == 'strongly_agree' ? 'dark' : ''" [class.dark]="selected_option == 'strongly_agree'">
+                  <ion-label>Strongly agree</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'strongly_agree' ? 'light' : 'dark'" value="strongly_agree" mode="md"></ion-radio>
+                </ion-item>
+                <ion-item lines="none" [color]="selected_option == 'agree' ? 'dark' : ''" [class.dark]="selected_option == 'agree'">
+                  <ion-label>Agree</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'agree' ? 'light' : 'dark'" value="agree" mode="md"></ion-radio>
+                </ion-item>
+                <ion-item lines="none" [color]="selected_option == 'neutral' ? 'dark' : ''" [class.dark]="selected_option == 'neutral'">
+                  <ion-label>Neutral</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'neutral' ? 'light' : 'dark'" value="neutral" mode="md"></ion-radio>
+                </ion-item>
+
+                <ion-item lines="none" [color]="selected_option == 'disagree' ? 'dark' : ''" [class.dark]="selected_option == 'disagree'">
+                  <ion-label>Disagree</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'disagree' ? 'light' : 'dark'" value="disagree" mode="md"></ion-radio>
+                </ion-item>
+
+                <ion-item lines="none" [color]="selected_option == 'strongly_disagree' ? 'dark' : ''" [class.dark]="selected_option == 'strongly_disagree'">
+                  <ion-label>Strongly disagree</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'strongly_disagree' ? 'light' : 'dark'" value="strongly_disagree" mode="md"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row class="next-button">
+          <ion-col>
+            <ion-button expand="block" (click)="next()" size="large">Next</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="onboarding-content">
+    <div class="previous-step">
+      <ion-icon *ngIf="current_step > 1" size="large" name="chevron-back-outline" (click)="goToPrevious()"></ion-icon>
+    </div>
+
+    <div class="onboarding-step">
+      <ion-label>What's your ethnicity?</ion-label>
+      <div class="interest-picker">
+        <ion-row class="interest-row">
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/african-american.svg" alt="African American"><br>
+              <span>African American</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/african.svg" alt="African"><br>
+              <span>African</span>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/afro-urasian.svg" alt="Afro-Urasian"><br>
+              <span>Afro-Urasian</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/ethnicity-other.svg" alt="Others"><br>
+              <span>Other</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+  </div>
+  
+
+  <ion-button class="onboarding-button" expand="block" shape="round" (click)="goToNext()">Next</ion-button>
+
+</ion-content>

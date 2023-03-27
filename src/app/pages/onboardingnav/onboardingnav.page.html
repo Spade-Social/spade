@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true">
+  <div class="onboarding-content">
+    <div class="previous-step">
+      <ion-icon *ngIf="current_step > 1" size="large" name="chevron-back-outline" (click)="goToPrevious()"></ion-icon>
+    </div>
+
+    <div class="onboarding-step">
+      <ion-label>Please finish a section!</ion-label>
+      <div class="interest-picker">
+        <ion-row class="interest-row">
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/single-section.svg" alt="Single"><br>
+              <h4>Single</h4>
+              <span>Single and searching for a casual relationship</span>
+              <div><ion-toggle slot="end"></ion-toggle></div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/red-light-section.svg" alt="Red Light District"><br>
+              <h4>Red Light District</h4>
+              <span>Find friends with benefits or hookups</span>
+              <div><ion-toggle slot="end"></ion-toggle></div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/long-term-section.svg" alt="Long Term"><br>
+              <h4>Long Term</h4>
+              <span>Look for a long term or serious relationship</span>
+              <div><ion-toggle slot="end"></ion-toggle></div>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/friend-group-section.svg" alt="Friends"><br>
+              <h4>Friend Group</h4>
+              <span>Explore friendsand connect with new people </span>
+              <div><ion-toggle slot="end"></ion-toggle></div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+  </div>
+
+
+  <ion-button class="onboarding-button" expand="block" shape="round" (click)="goToNext()">Next</ion-button>
+
+</ion-content>

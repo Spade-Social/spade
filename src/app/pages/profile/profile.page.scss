@@ -1,0 +1,23 @@
+.row {
+    padding: 12px;
+    .col-4{
+        .c{
+            height: 100px;
+            width: 100px;
+            background-color: #efefef;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .gr{
+                text-align: center;
+                ion-icon{
+                    font-size: 38px;
+                }
+                h3{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

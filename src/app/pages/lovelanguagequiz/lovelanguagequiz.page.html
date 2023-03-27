@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+
+  <div class="love_language_quiz">
+    <div class="">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">
+            <ion-icon (click)="back()" size="large" name="chevron-back-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="question-count">
+          <ion-col>
+            <p>Question 1/25</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-progress-bar [value]="0.04"></ion-progress-bar>
+          </ion-col>
+        </ion-row>
+        <ion-row class="question">
+          <ion-col>
+            <h4>Tell us the qualities you look for in a partner</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row class="options">
+          <ion-col>
+            <ion-list>
+              <ion-radio-group value="question_options" (ionChange)="selectOption($event)">
+                <ion-item lines="none" [color]="selected_option == 'politeness' ? 'dark' : ''" [class.dark]="selected_option == 'politeness'">
+                  <ion-label>Politeness</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'politeness' ? 'light' : 'dark'" value="politeness" mode="md"></ion-radio>
+                </ion-item>
+                <ion-item lines="none" [color]="selected_option == 'excessiveness' ? 'dark' : ''" [class.dark]="selected_option == 'excessiveness'">
+                  <ion-label>Excessiveness</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'excessiveness' ? 'light' : 'dark'" value="excessiveness" mode="md"></ion-radio>
+                </ion-item>
+                <ion-item lines="none" [color]="selected_option == 'disrespectful' ? 'dark' : ''" [class.dark]="selected_option == 'disrespectful'">
+                  <ion-label>Being Disrespectful</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'disrespectful' ? 'light' : 'dark'" value="disrespectful" mode="md"></ion-radio>
+                </ion-item>
+
+                <ion-item lines="none" [color]="selected_option == 'kindness' ? 'dark' : ''" [class.dark]="selected_option == 'kindness'">
+                  <ion-label>Kindness</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'kindness' ? 'light' : 'dark'" value="kindness" mode="md"></ion-radio>
+                </ion-item>
+
+                <ion-item lines="none" [color]="selected_option == 'giving_attitude' ? 'dark' : ''" [class.dark]="selected_option == 'giving_attitude'">
+                  <ion-label>Giving attitude</ion-label>
+                  <ion-radio slot="start" [color]="selected_option == 'giving_attitude' ? 'light' : 'dark'" value="giving_attitude" mode="md"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row class="next-button">
+          <ion-col>
+            <ion-button expand="block" (click)="next()" size="large">Next</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+</ion-content>

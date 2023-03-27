@@ -1,0 +1,74 @@
+ <ion-content [fullscreen]="true">
+  <!-- <div *ngIf="!login_account" class="main-content">
+    <app-homeslider></app-homeslider>
+  </div> -->
+  <!-- <div *ngIf="login_account" class="onboarding-content">
+    <div class="previous-step">
+      <ion-icon size="large" name="chevron-back-outline" (click)="goToPrevious()"></ion-icon>
+    </div>
+    <div class="onboarding-step">
+      <h4>Welcome back!</h4>
+    </div>
+    <div class="login-form">
+      <p>Enter Details to Login</p>
+      <ion-item lines="none">
+        <ion-label>Email</ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Enter your email" type="email" [(ngModel)]='email' class="custom-input" (ionChange)='inputChanged($event.target.value)'></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="new-form-group">
+        <ion-label>Password</ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Enter your password" type="{{password_input_type}}" [(ngModel)]='password' class="custom-input" (ionChange)='inputChanged($event.target.value)'></ion-input>
+        <ion-icon name="{{password_icon}}" slot="end" class="eye-icon" (click)="togglePassword()"></ion-icon>
+      </ion-item>
+      <ion-row class="login-addon">
+        <ion-col>
+          <ion-item lines="none">
+            <ion-checkbox slot="start"></ion-checkbox>
+          <ion-label>Remember me</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+        <ion-item lines="none">
+          <ion-label>Forgot Password?</ion-label>
+        </ion-item>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div> -->
+
+  <!-- <div *ngIf="login_account">
+    <ion-button class="onboarding-button" expand="block" shape="round" [disabled]="disable_login_account">Next</ion-button>
+  </div> -->
+
+  <div class="main_div">
+    <div class="df">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="logo-text">SPADE</ion-col>
+          <ion-col>
+            <img src="/assets/icon/favicon.png"  alt="">
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+      <span class="logo_under">A different experience...</span>
+    </div>
+
+
+
+
+  </div>
+  <div class="car">
+    <!-- <ion-button expand="block" size="large" (click)="createAccount()" >Create Account</ion-button> -->
+    <ion-button expand="block" size="large" routerLink="/reg" >Create Account</ion-button>
+
+    <ion-button expand="block" fill="outline" size="large" (click)="login()">Login</ion-button>
+
+    <p>By clicking <span class="inside_text">'Create Account</span> or <span class="inside_text">Login'</span>, I state that I have read and understood the terms and conditions.</p>
+  </div>
+
+</ion-content>

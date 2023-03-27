@@ -1,0 +1,95 @@
+.onboarding-content{
+
+    padding-top: 30px;
+    // overflow-y: scroll;
+}
+
+.previous-step{
+    height: 10%;
+}
+
+ion-content{
+    --padding-bottom: 18px;
+    --padding-end: 18px;
+    --padding-start: 18px;
+    --padding-top: 18px;
+}
+
+ion-button{
+    --height: 53px;
+    --margin-bottom: 10px;
+}
+
+ion-label{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 25px;
+}
+
+ion-input{
+    margin: auto;
+    margin-top: 25px;
+    border-bottom: solid 1px black;
+}
+
+ion-input.short{
+    max-width: 80%;
+}
+
+ion-select{
+    margin-top: 25px;
+    border-bottom: solid 1px black;
+    --border-color: black;
+}
+
+.onboarding-step{
+    text-align: center;
+}
+
+.onboarding-step p{
+    text-align: left;
+}
+.phone-input{
+    margin-top:25px;
+}
+
+.onboarding-button{
+    margin-bottom: 10px;
+    height: 53px;
+}
+
+.interest-picker{
+    margin-top: 15%;
+}
+
+.interest-picker .interest-row{
+    margin-bottom: 34px;
+}
+
+.interest-picker .interest-picker-item{
+    max-width: 162px;
+    min-height: 214px;
+    border: solid 1px #B8B6B6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin:auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+.interest-picker-item img{
+    height: 85px;
+}
+.interest-picker-item span{
+    color: #7E7E7E;
+    font-size: 12px;
+}
+.interest-picker-item h4{
+    font-size: 16px;
+}
+ion-toggle {
+    height: 14px;
+    width: 46px;
+    margin-top: 10px;
+}

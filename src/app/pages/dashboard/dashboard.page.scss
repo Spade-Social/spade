@@ -1,0 +1,18 @@
+
+::ng-deep {
+  .swiper-pagination-bullet {
+    background: rgb(234, 234, 234);
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ffffff !important;
+  }
+  .swiper-pagination-bullet{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    opacity: 1;
+    background: #eaeaea;
+  }
+}

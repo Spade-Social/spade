@@ -1,0 +1,1402 @@
+<ion-content>
+  <div class="main_div mb-4" *ngIf="current === 5">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">Where do you live?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <div class="text-center">
+        <img src="/assets/images/map.svg" height="250px" alt=""/>
+      </div>
+      <form class="py-2">
+        <div class="row">
+          <div class="col-sm-6 col-6 my-3">
+            <ion-label> Country</ion-label>
+
+            <div class="select_yt">
+              <select name="country" [(ngModel)]="country" class="" placeholder="Country"
+                      (change)="changeCountry($event)" id="">
+                <option value="" disabled>Choose country</option>
+                <option *ngFor="let item of Countries" value="{{item.id}}">{{item.name}}</option>
+
+              </select>
+            </div>
+          </div>
+          <div *ngIf="!noState" class="col-sm-6 col-6 my-3">
+            <ion-label> State</ion-label>
+            <div class="select_yt">
+              <select name="state" [(ngModel)]="state" class="" placeholder="State" (change)="changeState($event)"
+                      placeholder="Cameroon" id="">
+                <option value="" disabled>Choose state</option>
+                <option *ngFor="let item of States" value="{{item.id}}">{{item.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div *ngIf="!noCity" class="col-sm-6 col-6 my-3">
+            <ion-label> City</ion-label>
+            <div class="select_yt">
+              <select name="city" [(ngModel)]="city" class="" (change)="changeCity($event)" placeholder="City" id="">
+                <option value="">Choose city</option>
+                <option *ngFor="let item of Cities" value="{{item.id}}">{{item.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-6 col-6 my-3">
+            <ion-label> Postal Code</ion-label>
+
+            <div class="select_yt">
+              <ion-input type="number" maxlength="6" name="postal_code" [(ngModel)]="postal_code" required
+                         (keydown)="postalChange($event)" placeholder="Postal code"></ion-input>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div" *ngIf="current === 6">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">What's your religion?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="my-5 p-2">
+        <div class="main-co justify-content-start">
+          <div class="row">
+            <div class="col-6">
+              <label [ngClass]="religion == 1 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(1)">
+                Cristianity
+              </label>
+            </div>
+            <div class="col-6">
+              <label [ngClass]="religion == 2 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(2)">
+                Hinduism
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="main-co justify-content-end">
+          <div class="row">
+            <div class="col-5">
+              <label [ngClass]="religion == 3 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(3)">
+                Sikhism
+              </label>
+            </div>
+            <div class="col-7">
+              <label [ngClass]="religion == 4 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(4)">
+                Folk Religion
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="main-co justify-content-start">
+          <div class="row">
+            <div class="col-6">
+              <label [ngClass]="religion == 5 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(5)">
+                Judaism
+              </label>
+            </div>
+            <div class="col-6">
+              <label [ngClass]="religion == 6 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(6)">
+                Buddhism
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="main-co justify-content-end">
+          <div class="row">
+            <div class="col-6">
+              <label [ngClass]="religion == 7 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(7)">
+                Irreligion
+              </label>
+            </div>
+            <div class="col-6">
+              <label [ngClass]="religion == 8 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(8)">
+                Atheist
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="main-co justify-content-center">
+          <div class="row" style="width: 50%">
+            <div class="col">
+              <label [ngClass]="religion == 9 ? 'lbl-ch lbl-chk-checked' : 'lbl-chk'" (click)="selectReligion(9)">
+                Islam
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <ion-text *ngIf="religion === ''" color="danger">
+          * Please select one
+        </ion-text> -->
+
+      </form>
+    </div>
+  </div>
+  <div class="main_div" *ngIf="current === 7">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">What's your birthday?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="my-5 py-2">
+        <ion-label> Birthday</ion-label>
+
+        <ion-item lines="none">
+          <div class="row w-100">
+            <div class="col-3">
+              <select name="day" class="bdr" name="day" [(ngModel)]="day" placeholder="DD">
+                <option value="" disabled>DD</option>
+                <option *ngFor="let item of days" value="{{item}}">{{item < 10 ? '0' + item : item}}</option>
+
+
+              </select>
+
+            </div>
+            :
+            <div class="col-3">
+              <select class="bdr" name="month" [(ngModel)]="month" placeholder="MM">
+                <option value="" disabled>MM</option>
+                <option *ngFor="let item of months" value="{{item}}">{{item < 10 ? '0' + item : item}}</option>
+              </select>
+            </div>
+            :
+            <div class="col-4">
+              <select name="year" class="bdr" [(ngModel)]="year" placeholder="YYYY">
+                <option value="" disabled>YYYY</option>
+                <option *ngFor="let item of years" value="{{item}}">{{item}}</option>
+
+
+              </select>
+            </div>
+          </div>
+
+        </ion-item>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 8">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">What do you identify as?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="height: 50vh; align-items: center; justify-content: center"
+        >
+          <div class="row g-3">
+            <div class="col-4">
+              <input class="check_bx" name="gender" [(ngModel)]="gender" value="male" type="radio" id="1"/>
+              <label class="lbl-chks p-2" for="1">
+                <div class="text-center">
+                  <img src="/assets/images/identify-man.svg" alt=""/>
+                  <span>Man</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-4">
+              <input class="check_bx" name="gender" [(ngModel)]="gender" value="female" type="radio" id="2"/>
+              <label class="lbl-chks p-2" for="2">
+                <div class="text-center">
+                  <img src="/assets/images/identify-woman.svg" alt=""/>
+                  <span>Woman</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-4">
+              <input class="check_bx" name="gender" [(ngModel)]="gender" value="other" type="radio" id="3"/>
+              <label class="lbl-chks" for="3">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/identify-other.svg"
+                    height="80px"
+                    alt=""
+                  />
+                  <span>Others</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 9">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">What are you looking for?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="pt-5">
+        <div
+          class="d-flex"
+          style="height: 50vh; align-items: center; justify-content: center"
+        >
+          <div class="row g-3">
+            <div class="col-6">
+
+              <input class="check_bx" name="looking" [(ngModel)]="looking_for" value="man" type="radio" id="1"/>
+              <label class="lbl-chkss p-2" for="1">
+                <div class="text-center">
+                  <img src="/assets/images/identify-man.svg" alt=""/>
+                  <br/>
+                  <span>Man</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" name="looking" [(ngModel)]="looking_for" value="woman" type="radio" id="2"/>
+              <label class="lbl-chkss p-2" for="2">
+                <div class="text-center">
+                  <img src="/assets/images/identify-woman.svg" alt=""/>
+                  <span>Woman</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" name="looking" [(ngModel)]="looking_for" value="friends" type="radio" id="3"/>
+              <label class="lbl-chkss p-2" for="3">
+                <div class="text-center">
+                  <img src="/assets/images/interest-friends.svg" alt=""/>
+                  <span>Friends</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" name="looking" type="radio" [(ngModel)]="looking_for" value="others" id="4"/>
+              <label class="lbl-chkss p-2" for="4">
+                <div class="text-center">
+                  <img src="/assets/images/interest-others.svg" alt=""/>
+                  <span>Others</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" style="position:relative" *ngIf="current === 10">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2">
+          <ion-icon
+            (click)="back()"
+            size="large"
+            name="chevron-back-outline"
+          ></ion-icon>
+        </ion-col>
+        <ion-col size="10"
+        ><span class="text-center">What's your height?</span></ion-col
+        >
+      </ion-row>
+    </ion-grid>
+    <div class="">
+
+      <form class="p-3">
+        <div class="row">
+          <div class="col-4">
+            <div class="mb-3">
+              <label for="hei">Heights</label>
+              <input class="hei" type="number" name="height" [(ngModel)]="height" placeholder="180cm" id="hei">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row g-3 px-2">
+
+          <div class="col-6">
+
+            <div class="text-center mt-3 w-100">
+              <img src="/assets/images/height-man.svg" height="320px" alt=""/>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="text-center w-100 mt-3">
+              <img src="/assets/images/slide.svg" height="320px" alt=""/>
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 11">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center"
+          >What build are you looking for?</span
+          ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="pt-5">
+        <div
+          class="d-flex"
+          style="height: 50vh; align-items: center; justify-content: center"
+        >
+          <div class="row mt-3 g-3">
+            <div class="col-6">
+              <input class="check_bx" name="build" [(ngModel)]="build" value="slim" type="radio" id="1"/>
+              <label class="lbl-chkss p-2" for="1">
+                <div class="text-center">
+                  <img src="/assets/images/man-slim.svg" alt=""/>
+                  <br/>
+                  <span>Slim</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" name="build" [(ngModel)]="build" value="athletic" type="radio" id="2"/>
+              <label class="lbl-chkss p-2" for="2">
+                <div class="text-center">
+                  <img src="/assets/images/man-athletic.svg" alt=""/>
+                  <br/>
+                  <span>Athletic</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" name="build" [(ngModel)]="build" value="husky" type="radio" id="3"/>
+              <label class="lbl-chkss p-2" for="3">
+                <div class="text-center">
+                  <img src="/assets/images/man-husky.svg" alt=""/>
+                  <br/>
+                  <span>Husky</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" name="build" [(ngModel)]="build" value="brawny" type="radio" id="4"/>
+              <label class="lbl-chkss p-2" for="4">
+                <div class="text-center">
+                  <img src="/assets/images/man-brawny.svg" alt=""/>
+                  <br/>
+                  <span>Brawny</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 12">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">When are you most free?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="height: 50vh; align-items: center; justify-content: center"
+        >
+          <div class="row g-3">
+            <div class="col-4">
+              <input class="check_bx" name="free" [(ngModel)]="free" value="morning" type="radio" id="1"/>
+              <label class="lbl-chks p-2" for="1">
+                <div class="text-center">
+                  <img src="/assets/images/morning.svg" height="80px" alt=""/>
+                  <br/><span>Morning</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-4">
+              <input class="check_bx" name="free" [(ngModel)]="free" value="noon" type="radio" id="2"/>
+              <label class="lbl-chks p-2" for="2">
+                <div class="text-center">
+                  <img src="/assets/images/noon.svg" alt=""/>
+                  <br/><span>Noon</span>
+                </div>
+              </label>
+            </div>
+            <div class="col-4">
+              <input class="check_bx" name="free" [(ngModel)]="free" value="night" type="radio" id="3"/>
+              <label class="lbl-chks" for="3">
+                <div class="text-center">
+                  <img src="/assets/images/night.svg" height="80px" alt=""/>
+                  <br/>
+                  <span>Night</span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 13">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">Do you drink?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="height: 50vh; align-items: center; justify-content: center"
+        >
+          <div class="row g-3">
+            <div class="col-4">
+              <!-- <input class="check_bx" name="drink" [(ngModel)]="drink" value="yes" type="radio" id="1" /> -->
+              <label [ngClass]="drink == '1' ? 'lbl-chks relationship-persona-checked' : 'lbl-chks'" (click)="Drink(1)">
+                <div class="text-center mt-3">
+                  <img
+                    src="/assets/images/drink-yes.svg"
+                    height="65px"
+                    alt=""
+                  /><br/>
+                  <p>Yes</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-4">
+              <!-- <input class="check_bx" name="drink" [(ngModel)]="drink" value="no" type="radio" id="2" /> -->
+              <label [ngClass]="drink == '2' ? 'lbl-chks relationship-persona-checked' : 'lbl-chks'" (click)="Drink(2)">
+                <div class="text-center mt-3">
+                  <img
+                    src="/assets/images/drink-no.svg"
+                    height="65px"
+                    alt=""
+                  /><br/>
+                  <p>No</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-4">
+              <!-- <input class="check_bx" name="drink" [(ngModel)]="drink" value="sometime" type="radio" id="3" /> -->
+              <label [ngClass]="drink == '3' ? 'lbl-chks relationship-persona-checked' : 'lbl-chks'" (click)="Drink(3)">
+                <div class="text-center mt-3">
+                  <img
+                    src="/assets/images/drink-some.svg"
+                    height="65px"
+                    alt=""
+                  /><br/>
+                  <p>Sometimes</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 14">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">Do you smoke?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="height: 50vh; align-items: center; justify-content: center"
+        >
+          <div class="row g-3">
+            <div class="col-4">
+              <!-- <input class="check_bx" name="smoke" [(ngModel)]="smoke" value="yes" type="radio" id="1" /> -->
+              <label [ngClass]="smoke == '1' ? 'lbl-chks relationship-persona-checked' : 'lbl-chks'" (click)="Smoke(1)">
+                <div class="text-center mt-2">
+                  <img src="/assets/images/smoke-yes.svg" alt=""/>
+                  <p class="mt-2">Yes</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-4">
+              <!-- <input class="check_bx" name="smoke" [(ngModel)]="smoke" value="no" type="radio" id="2" /> -->
+              <label [ngClass]="smoke == '2' ? 'lbl-chks relationship-persona-checked' : 'lbl-chks'" (click)="Smoke(2)">
+                <div class="text-center mt-2">
+                  <img src="/assets/images/smoke-no.svg" alt=""/>
+                  <p class="mt-2">No</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-4">
+              <!-- <input class="check_bx" name="smoke" [(ngModel)]="smoke" value="sometime" type="radio" id="3" /> -->
+              <label [ngClass]="smoke == '3' ? 'lbl-chks relationship-persona-checked' : 'lbl-chks'" (click)="Smoke(3)">
+                <div class="text-center mt-2">
+                  <img src="/assets/images/smoke-some.svg" alt=""/>
+                  <p class="mt-2">Sometimes</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 15">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10" class=""
+          ><span class="text-center w-100">Do you have children?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 50vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div class="row gx-4">
+            <div class="col-6">
+              <!-- <input class="check_bx" name="children" [(ngModel)]="children" value="yes" type="radio" id="1" /> -->
+              <label [ngClass]="children == '1' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'"
+                     (click)="Children(1)">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/children-yes.svg"
+                    height="110px"
+                    width="150px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">Yes</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <!-- <input class="check_bx" name="children" [(ngModel)]="children" value="no" type="radio" id="2" /> -->
+              <label [ngClass]="children == '2' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'"
+                     (click)="Children(2)">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/children-no.svg"
+                    height="110px"
+                    width="150px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">No</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 16">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center"
+          >What’s your highest education?</span
+          ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 60vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+
+          <div class="row g-3">
+
+            <div class="col-6">
+              <!-- <input class="check_bx" name="education" checked="true"  (change)="handleChange($event)"  [(ngModel)]="education" value="no" type="radio" id="1" /> -->
+              <label (click)="educ('no')"
+                     [ngClass]="education == 'no' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/education-no.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">No School</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <!-- <input class="check_bx" name="education" (change)="handleChange($event)" [(ngModel)]="education" value="high school" type="radio" id="2" /> -->
+              <label (click)="educ('high school')"
+                     [ngClass]="education == 'high school' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/education-high.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">High School</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <!-- <input class="check_bx" name="education" [(ngModel)]="education" value="college"  type="radio" id="3" /> -->
+              <label (click)="educ('college')"
+                     [ngClass]="education == 'college' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/education-grad.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">College</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <!-- <input class="check_bx" name="education" [(ngModel)]="education" value="trade"  type="radio" id="4" /> -->
+              <label [ngClass]="education == 'trade' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'"
+                     (click)="educ('trade')">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/education-trade.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">Trade School</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 17">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center" style="font-size:18px"
+          >Where would you like to go to have fun? <span class="text-muted">(select up to 10 in order)</span> </span
+          ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 70vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div class="">
+
+            <div class="d-flex mb-3 ion-padding" style="
+
+          width: 100%;
+          align-items: center;
+              justify-content: center;
+
+        ">
+              <div class=" row g-3">
+                <div class="col-3" *ngFor="let item of Fun; let i = index">
+
+                  <input class="check_bx" (change)="onFunEvent($event, item)" name="fun" [checked]="item.status"
+                         type="checkbox" id="fun+{{i}}"/>
+                  <label class="lbl-ch" for="fun+{{i}}">
+                    <div class="text-center">
+                      <img
+                        src="{{item.img}}"
+
+                        alt=""
+                      />
+                    </div>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 18">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center" style="font-size: 18px"
+          >How would you say you are in a relationship? (select 2)</span
+          ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 70vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div class="row g-3">
+            <div class="col-6" *ngFor="let item of relationship">
+              <input
+                class="check_bx"
+                name="rela"
+                [checked]="item.status"
+                (change)="onRelaEvent($event, item)"
+                value="{{item.id}}"
+                type="checkbox"
+                id="{{item.id}}"
+              />
+              <label class="lbl-chkss" for="{{item.id}}">
+                <div class="text-center">
+                  <img src="{{item.img}}" height="110px" width="120px" alt=""/>
+                  <p style="margin-top: -10px">{{item.name}}</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 19">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center" style="font-size: 20px"
+          >What’s your ethnicity?</span
+          ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 60vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div class="row g-3">
+            <div class="col-6" style="position: relative">
+              <!-- <input class="check_bx" name="ethnicity" [(ngModel)]="ethnicity" value="african-american" type="radio" id="1" /> -->
+              <label
+                [ngClass]="ethnicity == 'african-american' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'"
+                (click)="Ethnicityy('african-american')">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/african-american.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px; font-size: 14px">
+                    African American
+                  </p>
+                </div>
+              </label>
+              <span (click)="Pog()" style="position: absolute; top: 4px; right: 20px"
+              ><ion-icon name="information-circle-outline"></ion-icon
+              ></span>
+            </div>
+            <div class="col-6" style="position: relative">
+              <!-- <input class="check_bx" name="ethnicity" [(ngModel)]="ethnicity" value="african" type="radio" id="2" /> -->
+              <label [ngClass]="ethnicity == 'african' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'"
+                     (click)="Ethnicityy('african')">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/african.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">African</p>
+                </div>
+              </label>
+              <span (click)="Afri()" style="position: absolute; top: 4px; right: 20px"
+              ><ion-icon name="information-circle-outline"></ion-icon
+              ></span>
+            </div>
+            <div class="col-6" style="position: relative">
+              <!-- <input class="check_bx" name="ethnicity" [(ngModel)]="ethnicity" value="afro-urasian" type="radio" id="3" /> -->
+              <label [ngClass]="ethnicity == 'afro-urasian' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'"
+                     (click)="Ethnicityy('afro-urasian')">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/afro-urasian.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">Afro-Urasian</p>
+                </div>
+              </label>
+              <span (click)="Ura()" style="position: absolute; top: 4px; right: 20px"
+              ><ion-icon name="information-circle-outline"></ion-icon
+              ></span>
+            </div>
+            <div class="col-6" style="position: relative">
+              <!-- <input class="check_bx" name="ethnicity" [(ngModel)]="ethnicity" value="other" type="radio" id="4" /> -->
+              <label [ngClass]="ethnicity == 'other' ? 'lbl-chkss relationship-persona-checked' : 'lbl-chkss'"
+                     (click)="Ethnicityy('other')">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/ethnicity-other.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">Other</p>
+                </div>
+              </label>
+              <span (click)="Others()" style="position: absolute; top: 4px; right: 20px"
+              ><ion-icon name="information-circle-outline"></ion-icon
+              ></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div" *ngIf="current === 20">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center">Preferred religion?</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="my-5 p-2">
+        <div class="main-co justify-content-start">
+          <div class="row">
+            <div class="col-6">
+              <input class="check_bx" (change)="selectPReligion($event, 1,'Cristianity')" [checked]="preferstatus(1)" name="prefer"
+                     type="checkbox" id="p_1"/>
+              <label class="lbl-ch" for="p_1">
+                Cristianity
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" (change)="selectPReligion($event, 2,'Hinduism')" [checked]="preferstatus(2)" name="prefer"
+                     type="checkbox" id="p_2"/>
+
+              <label class="lbl-ch" for="p_2">
+                Hinduism
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="main-co justify-content-end">
+          <div class="row">
+            <div class="col-5">
+              <input class="check_bx" (change)="selectPReligion($event, 3,'Sikhism')" [checked]="preferstatus(3)" name="prefer"
+                     type="checkbox" id="p_3"/>
+
+              <label class="lbl-ch" for="p_3">
+                Sikhism
+              </label>
+            </div>
+            <div class="col-7">
+              <input class="check_bx" (change)="selectPReligion($event, 4, 'Folk Religion')" name="prefer" [checked]="preferstatus(4)"
+                     type="checkbox" id="p_4"/>
+
+              <label class="lbl-ch" for="p_4">
+                Folk Religion
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="main-co justify-content-start">
+          <div class="row">
+            <div class="col-6">
+              <input class="check_bx" (change)="selectPReligion($event, 5, 'Judaism')" name="prefer" [checked]="preferstatus(5)"
+                     type="checkbox" id="p_5"/>
+
+              <label class="lbl-ch" for="p_5">
+                Judaism
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" (change)="selectPReligion($event, 6,'Buddhism')" name="prefer" [checked]="preferstatus(6)"
+                     type="checkbox" id="p_6"/>
+
+              <label class="lbl-ch" for="p_6">
+                Buddhism
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="main-co justify-content-end">
+          <div class="row">
+            <div class="col-6">
+              <input class="check_bx" (change)="selectPReligion($event, 7,'Irreligion')" name="prefer" [checked]="preferstatus(7)"
+                     type="checkbox" id="p_7"/>
+
+              <label class="lbl-ch" for="p_7">
+                Irreligion
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" (change)="selectPReligion($event, 8, 'Atheist')" name="prefer" [checked]="preferstatus(8)"
+                     type="checkbox" id="p_8"/>
+
+              <label class="lbl-ch" for="p_8">
+                Atheist
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="main-co justify-content-center">
+          <div class="row" style="width: 50%">
+            <div class="col">
+              <input class="check_bx" (change)="selectPReligion($event, 9, 'Islam')" name="prefer" [checked]="preferstatus(9)"
+                     type="checkbox" id="p_9"/>
+
+              <label class="lbl-ch" for="p_9">
+                Islam
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <ion-text *ngIf="religion === ''" color="danger">
+          * Please select one
+        </ion-text> -->
+
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 21">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center" style="font-size: 20px"
+          >Preferred ethnicity?</span
+          ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 60vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div class="row g-3">
+            <div class="col-6" style="position: relative">
+              <input class="check_bx" (change)="selectPEthnicity($event, 'african-american')"
+                     [checked]="preferEthnicity('african-american')" name="prefer_ethnicity" type="checkbox"
+                     id="pafrican-american"/>
+              <!-- <input class="check_bx" name="ethnicity" [(ngModel)]="ethnicity" value="african-american" type="radio" id="1" /> -->
+              <label class="lbl-chkss" for='pafrican-american'>
+                <div class="text-center">
+                  <img
+                    src="/assets/images/african-american.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px; font-size: 14px">
+                    African American
+                  </p>
+                </div>
+              </label>
+              <!-- <span (click)="Pog()" style="position: absolute; top: 4px; right: 20px"
+                ><ion-icon name="information-circle-outline"></ion-icon
+              ></span> -->
+            </div>
+            <div class="col-6" style="position: relative">
+              <input class="check_bx" (change)="selectPEthnicity($event, 'african')"
+                     [checked]="preferEthnicity('african')" name="prefer_ethnicity" type="checkbox" id="pafrican"/>
+              <!-- <input class="check_bx" name="ethnicity" [(ngModel)]="ethnicity" value="african-american" type="radio" id="1" /> -->
+              <label class="lbl-chkss" for='pafrican'>
+                <div class="text-center">
+                  <img
+                    src="/assets/images/african.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">African</p>
+                </div>
+              </label>
+              <!-- <span (click)="Afri()" style="position: absolute; top: 4px; right: 20px"
+                ><ion-icon name="information-circle-outline"></ion-icon
+              ></span> -->
+            </div>
+            <div class="col-6" style="position: relative">
+              <input class="check_bx" (change)="selectPEthnicity($event, 'afro-urasian')"
+                     [checked]="preferEthnicity('afro-urasian')" name="prefer_ethnicity" type="checkbox"
+                     id="pafro-urasian"/>
+              <!-- <input class="check_bx" name="ethnicity" [(ngModel)]="ethnicity" value="african-american" type="radio" id="1" /> -->
+              <label class="lbl-chkss" for='pafro-urasian'>
+                <div class="text-center">
+                  <img
+                    src="/assets/images/afro-urasian.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">Afro-Urasian</p>
+                </div>
+              </label>
+              <!-- <span (click)="Ura()" style="position: absolute; top: 4px; right: 20px"
+                ><ion-icon name="information-circle-outline"></ion-icon
+              ></span> -->
+            </div>
+            <div class="col-6" style="position: relative">
+              <input class="check_bx" (change)="selectPEthnicity($event, 'other')" [checked]="preferEthnicity('other')"
+                     name="prefer_ethnicity" type="checkbox" id="pother"/>
+              <!-- <input class="check_bx" name="ethnicity" [(ngModel)]="ethnicity" value="african-american" type="radio" id="1" /> -->
+              <label class="lbl-chkss" for='pother'>
+                <div class="text-center">
+                  <img
+                    src="/assets/images/ethnicity-other.svg"
+                    height="110px"
+                    width="120px"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px">Other</p>
+                </div>
+              </label>
+              <!-- <span (click)="Others()" style="position: absolute; top: 4px; right: 20px"
+                ><ion-icon name="information-circle-outline"></ion-icon
+              ></span> -->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 22">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center" style="font-size: 20px"
+          >OTP VERIFICATION</span
+          ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 60vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div class="p-2 w-100">
+            <p class="text-center mb-2 w-100">Please enter the otp verification code that was sent to your email</p><br>
+            <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="otpConfig"></ng-otp-input>
+            <label class="text-center m-2 w-100">Don't get otp? <a href="javascript:void">Resend</a></label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="main_div mb-4" *ngIf="current === 23">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+          ><span class="text-center" style="font-size: 20px"
+          >Please finish a section?</span
+          ></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 75vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div class="row g-3">
+
+            <div class="col-6" style="position: relative">
+              <label class="lbl-chkssss" for="1">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/single-section.svg"
+                    alt=""
+                  />
+                  <p style="margin-top: 10px; font-size: 14px">
+                    Single
+                  </p>
+                  <p style=" font-size: 10px; line-height:-20px">Single and searching for
+                    a casual relationship</p>
+
+                  <ion-toggle mode="md" (click)="openSingle()" color="success"></ion-toggle>
+                </div>
+              </label>
+              <span style="position: absolute; top: 4px; right: 20px"
+              ><ion-icon name="information-circle-outline"></ion-icon
+              ></span>
+            </div>
+            <div class="col-6" style="position: relative">
+              <label class="lbl-chkssss" for="1">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/red-light-section.svg"
+                    alt=""
+                  />
+                  <p style="margin-top: 5px; font-size: 14px">
+                    Red Light District
+                  </p>
+                  <p style=" font-size: 10px; line-height:-20px">Find friends with benefits or hookups</p>
+                  <ion-toggle (click)="openRed()" mode="md" color="danger"></ion-toggle>
+                </div>
+              </label>
+              <span style="position: absolute; top: 4px; right: 20px"
+              ><ion-icon name="information-circle-outline"></ion-icon
+              ></span>
+            </div>
+            <div class="col-6" style="position: relative">
+              <label class="lbl-chkssss" for="1">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/long-term-section.svg"
+                    alt=""
+                  />
+                  <p style="margin-top: -10px; font-size: 14px">
+                    Long Term
+                  </p>
+                  <p style=" font-size: 10px; line-height:-20px">Look for a long term or serious relationship</p>
+                  <p>
+                    <ion-toggle mode="md" (click)="openLongTerm()" color="medium"></ion-toggle>
+                  </p>
+
+
+                </div>
+              </label>
+              <span style="position: absolute; top: 4px; right: 20px"
+              ><ion-icon name="information-circle-outline"></ion-icon
+              ></span>
+            </div>
+            <div class="col-6" style="position: relative">
+              <label class="lbl-chkssss" for="1">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/friend-group-section.svg"
+                    alt=""
+                  />
+                  <p style="margin-top: 5px; font-size: 14px">
+                    Friend Group
+                  </p>
+                  <p style=" font-size: 10px;">Explore friends and connect
+                    with new people </p>
+                  <p>
+                    <ion-toggle (click)="openFriends()" mode="md" color="warning"></ion-toggle>
+                  </p>
+
+                </div>
+              </label>
+              <span (click)="Pog()" style="position: absolute; top: 4px; right: 20px"
+              ><ion-icon name="information-circle-outline"></ion-icon
+              ></span>
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</ion-content>
+<ion-footer class="ion-padding ion-no-border">
+  <div class="btn_down">
+    <div class="">
+      <ion-button expand="block" (click)="first()" size="large"
+      >Next
+      </ion-button
+      >
+    </div>
+  </div>
+</ion-footer>

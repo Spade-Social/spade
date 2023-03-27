@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="onboarding-content">
+    <div class="previous-step">
+      <ion-icon *ngIf="current_step > 1" size="large" name="chevron-back-outline" (click)="goToPrevious()"></ion-icon>
+    </div>
+
+    <div class="onboarding-step">
+      <ion-label>What do you say you are in a relationship? (select 2)</ion-label>
+      <div class="interest-picker">
+        <ion-row class="interest-row">
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/leader.svg" alt="Leader"><br>
+              <span>Leader</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/supporter.svg" alt="supporter"><br>
+              <span>Supporter</span>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/50_50.svg" alt="50/50"><br>
+              <span>50/50</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/mixed.svg" alt="Mixed"><br>
+              <span>Mixed</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+  </div>
+  
+
+  <ion-button class="onboarding-button" expand="block" shape="round" (click)="goToNext()">Next</ion-button>
+
+</ion-content>

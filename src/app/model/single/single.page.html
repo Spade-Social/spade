@@ -1,0 +1,259 @@
+
+<ion-content>
+  <div class="main_div" *ngIf="current === 1">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+     <div class="main d-flex">
+      <div class="dic">
+        <div class="text-center">
+          <img src="/assets/images/single-section.svg" height="300px" width="300px" alt="">
+          <h2 class="font-bold" >Single & Searching</h2>
+        <p class="text-muted">Single and searching for a casual relationship</p>
+        </div>
+
+      </div>
+     </div>
+    </div>
+  </div>
+
+  <div class="main_div" *ngIf="current === 2">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              size="large"
+              (click)="back()"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+            ><span class="text-center" style="font-size: 20px"
+              >Add Photos</span
+            ></ion-col
+          >
+
+        </ion-row>
+        <p class="text-center" style="font-size:14px">Add at least 4 photos to add to your <span style="color: #03843F">Single & Searching</span>  profile</p>
+
+      </ion-grid>
+      <form class="my-5 p-2">
+        <div class="main">
+          <div class="row g-3">
+            <div class="col-4">
+             <div class="im">
+
+             </div>
+            </div>
+            <div class="col-4">
+              <div class="im">
+
+              </div>
+             </div>
+             <div class="col-4">
+              <div class="im">
+
+              </div>
+             </div>
+             <div class="col-4">
+              <div class="im">
+
+              </div>
+             </div>
+             <div class="col-4">
+              <div class="ims">
+
+              </div>
+             </div>
+             <div class="col-4">
+              <div class="ims">
+
+              </div>
+             </div>
+             <div class="col-4">
+              <div class="ims">
+
+              </div>
+             </div>
+             <div class="col-4">
+              <div class="ims">
+
+              </div>
+             </div>
+             <div class="col-4">
+              <div class="ims">
+
+              </div>
+             </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="main_div mb-4" *ngIf="current === 3">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              (click)="back()"
+              size="large"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+            ><span class="text-center" style="font-size:20px">What days are you most free</span></ion-col
+          >
+        </ion-row>
+      </ion-grid>
+      <form class="py-2">
+        <div
+          class="d-flex"
+          style="
+            height: 40vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div class="row g-4">
+            <div class="col-6">
+              <input class="check_bx" name="freeweek" type="radio" id="1" />
+              <label class="lbl-chkss" for="1">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/free_weeks.png"
+height="100px" width="170px"
+                    alt=""
+                  />
+                  <p style="margin-top: -5px">Weekdays</p>
+                </div>
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="check_bx" name="freeweek" type="radio" id="2" />
+              <label class="lbl-chkss" for="2">
+                <div class="text-center">
+                  <img
+                    src="/assets/images/free_weekend.svg"
+                    height="100px" width="170px"
+                    alt=""
+                  />
+                  <p style="margin-top: -5px">Weekend</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="main_div" *ngIf="current === 4">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              size="large"
+              (click)="back()"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+            ><span class="text-center" style="font-size: 20px"
+              >Let's break the ice</span
+            ></ion-col
+          >
+
+        </ion-row>
+        <p class="text-center text-muted" style="font-size:14px">Answer 4 ice-breaker questions to help your matches know you better.</p>
+
+      </ion-grid>
+      <form class="my-5 px-2">
+        <div class="main" style="height: 60vh; min-height:60vh; max-height:60vh">
+<div class="row g-2">
+  <div class="col-12">
+    <input class="check_bx" name="question" type="radio" id="1" />
+    <label class="lbl-chkssss" (click)="openSingle()" for="1">
+Choose question
+    </label>
+  </div>
+  <div class="col-12">
+    <input class="check_bx" name="question" type="radio" id="2" />
+    <label class="lbl-chkssss" (click)="openSingle()" for="2">
+      Choose question
+    </label>
+  </div>
+  <div class="col-12">
+    <input class="check_bx" name="question" type="radio" id="3" />
+    <label class="lbl-chkssss" (click)="openSingle()" for="3">
+      Choose question
+    </label>
+  </div>
+  <div class="col-12">
+    <input class="check_bx" name="question" type="radio" id="4" />
+    <label class="lbl-chkssss" (click)="openSingle()" for="4">
+      Choose question
+    </label>
+  </div>
+  </div>
+  </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="main_div" *ngIf="current === 5">
+    <div class="">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon
+              size="large"
+              (click)="back()"
+              name="chevron-back-outline"
+            ></ion-icon>
+          </ion-col>
+          <ion-col size="10"
+            ><span class="text-center" style="font-size: 20px"
+              >Choose a question</span
+            ></ion-col
+          >
+
+        </ion-row>
+
+      </ion-grid>
+      <form class="my-5 p-2">
+        <div class="main">
+         <form>
+<label for="">Topics to debate</label>
+<textarea name="" id="" cols="30" rows="10" style="width:100%" placeholder="Your answer here"></textarea>
+         </form>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div class="btn_down">
+    <div class="">
+      <ion-button (click)="Next()" expand="block" size="large"
+        >Next</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

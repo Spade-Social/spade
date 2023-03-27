@@ -1,0 +1,56 @@
+.love_language_quiz{
+  padding: 20px 12px;
+}
+
+ion-progress-bar{
+  border: 0.3px solid #9A9A9A;
+  height: 10px;
+  border-radius: 18.2839px;
+}
+ion-progress-bar::part(track) {
+  background: white;
+}
+
+.question-count{
+  margin-top: 16px;
+  margin-bottom: 3px;
+  font-size: 12px;
+}
+
+.question{
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.question h4{
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.options ion-item{
+  border: 0.3px solid #9A9A9A;
+  margin-bottom: 24px;
+  height: 52px;
+  border-radius: 10px;
+  padding-top: 5px;;
+}
+
+.options ion-item.dark{
+  background-color: #222428;
+}
+
+.option ion-item label {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.next-button{
+  margin-top: 40px;
+}
+
+ion-radio {
+  width: 20px;
+  height: 20px;
+  margin-right: 32px;
+}

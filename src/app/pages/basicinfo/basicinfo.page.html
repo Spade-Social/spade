@@ -1,0 +1,121 @@
+<ion-content>
+  <div class="onboarding-content">
+    <div class="previous-step">
+      <ion-icon *ngIf="current_step === 1" size="large" routerLink="/index" name="chevron-back-outline"></ion-icon>
+      <ion-icon *ngIf="current_step > 1" size="large" name="chevron-back-outline" (click)="goToPrevious()"></ion-icon>
+    </div>
+
+
+    <div *ngIf="current_step == 1" class="onboarding-step">
+      <ion-label>What's your name?</ion-label>
+      <ion-input class="short" placeholder="First name"></ion-input>
+    </div>
+
+    <div *ngIf="current_step == 2" class="onboarding-step">
+      <ion-label>What's your phone number?</ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+                <ion-select placeholder="+235">
+                  <ion-select-option value="+235">+235</ion-select-option>
+                </ion-select>
+          </ion-col>
+          <ion-col size="8">
+            <ion-input class="phone-input" type="number"></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div *ngIf="current_step == 3" class="onboarding-step">
+      <ion-label>What's your email?</ion-label>
+      <ion-input class="short" placeholder="Email address"></ion-input>
+    </div>
+
+    <div *ngIf="current_step == 4" class="onboarding-step">
+      <ion-label>Where do you live?</ion-label>
+      <img src="assets/images/map.svg" alt="map-picker">
+      <p><ion-icon name="location-outline"></ion-icon> Select your current location: </p>
+    </div>
+
+    <div *ngIf="current_step == 5" class="onboarding-step">
+      <ion-label>What's your religion?</ion-label>
+    </div>
+
+    <div *ngIf="current_step == 6" class="onboarding-step">
+      <ion-label>When's your birthday?</ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col><ion-input class="short" placeholder="DD"></ion-input></ion-col>
+          <ion-col><ion-input class="short" placeholder="MM"></ion-input></ion-col>
+          <ion-col><ion-input class="short" placeholder="YYYY"></ion-input></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div *ngIf="current_step == 7" class="onboarding-step">
+      <ion-label>What do you identify as?</ion-label>
+      <div class="gender-picker">
+        <ion-row>
+          <ion-col>
+            <div class="gender-picker-item">
+              <img src="assets/images/identify-man.svg" alt="man"><br>
+              <span>Man</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="gender-picker-item">
+              <img src="assets/images/identify-woman.svg" alt="Woman"><br>
+              <span>Woman</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="gender-picker-item">
+              <img src="assets/images/identify-other.svg" alt="Other"><br>
+              <span>Other</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+    <div *ngIf="current_step == 8" class="onboarding-step">
+      <ion-label>What are you looking for?</ion-label>
+      <div class="interest-picker">
+        <ion-row class="interest-row">
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/identify-man.svg" alt="Men"><br>
+              <span>Men</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/identify-woman.svg" alt="Women"><br>
+              <span>Women</span>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/interest-friends.svg" alt="Friends"><br>
+              <span>Friends</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="interest-picker-item">
+              <img src="assets/images/interest-others.svg" alt="Others"><br>
+              <span>Other</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+  </div>
+
+
+  <ion-button class="onboarding-button" expand="block" shape="round" (click)="goToNext()">Next</ion-button>
+
+</ion-content>

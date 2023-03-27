@@ -1,0 +1,32 @@
+<ion-header [translucent]="false" class="ion-no-border ion-no-padding ion-no-margin">
+
+    <ion-grid class="ion-padding">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="4">
+          <div class="text-left">
+            <img src="assets/icon/bg.png" style="height: 45px; width: 45px; border-radius: 50%">
+          </div>
+        </ion-col>
+        <ion-col size="8" class="border-1 border-primary">
+         <div class="d-flex ion-justify-content-between ion-align-items-center">
+           <h4 class="ion-text-sm-center mt-2">Discover</h4>
+           <div class="d-flex ">
+             <ion-buttons routerLink="/notifications">
+               <ion-icon size="small" name="notifications-outline"></ion-icon>
+             </ion-buttons>
+             <ion-buttons>
+               <ion-icon size="small" name="ellipsis-vertical-outline"></ion-icon>
+             </ion-buttons>
+           </div>
+         </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  <!-- <app-tinder-ui [cards]="cards" (choiceMade)="logChoice($event)"></app-tinder-ui> -->
+
+</ion-header>
+<div class="my-5">
+  <app-tinder-ui [cards]="cards" (choiceMade)="logChoice($event)"></app-tinder-ui>
+
+</div>

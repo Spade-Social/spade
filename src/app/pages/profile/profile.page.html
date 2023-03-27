@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="p-2">
+    <ion-title class="fw-bolder text-lg">Profile</ion-title>
+    <ion-tabs>
+      <ion-router-outlet></ion-router-outlet>
+    
+      <ion-tab-bar>
+        <ion-tab-button tab="home">
+          <!-- <ion-icon name="play-circle"></ion-icon> -->
+         Preview
+        </ion-tab-button>
+        <ion-tab-button tab="radio">
+          <!-- <ion-icon name="radio"></ion-icon> -->
+          <button type="button" style="width: 70%; border-radius: 20px; border: 1px solid #bebebe" class="btn fw-bolder btn-sm btn-white rounded-sm">
+          Edit
+          </button>
+        </ion-tab-button>
+       
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="row g-2">
+  <div class="col-4">
+    <div class="c">
+      <div class="gr">
+        <ion-icon name="image-outline"></ion-icon>
+        <h3>Photos</h3>
+      </div>
+    
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="c">
+      <div class="gr">
+        <ion-icon name="happy-outline"></ion-icon>
+        <h3>Personality</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="c">
+      <div class="gr">
+        <ion-icon name="eye-outline"></ion-icon>
+        <h3>Attractiveness</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row g-2">
+  <div class="col-4">
+    <div class="c">
+      <div class="gr">
+        <ion-icon name="image-outline"></ion-icon>
+        <h3>Values</h3>
+      </div>
+    
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="c">
+      <div class="gr">
+        <ion-icon name="happy-outline"></ion-icon>
+        <h3>Activities</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="c">
+      <div class="gr">
+        <ion-icon name="eye-outline"></ion-icon>
+        <h3>Preferences</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+</ion-content>
