@@ -201,6 +201,7 @@ cards_back: boolean = false;
     }
 
     addClass() {
+      console.log(this.addClass);
       this.addMyClass = !this.addMyClass;
     }
 
