@@ -65,7 +65,7 @@ border: none;
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-
+position: relative;
   border: 1px solid #306c12;
   div.front{
     width: 100%;
@@ -75,6 +75,15 @@ border: none;
     background-position: center;
   }
 
+}
+.top-tin{
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 248, 248, 0.7);
+  position: absolute;
+  top:0;
+  left:0;
+  opacity: 1;
 }
 .moving.tinder--card {
   transition: none;
@@ -169,6 +178,7 @@ ion-fab-button {
   justify-content: center;
   align-items: center;
   font-size: 2.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .fab-item{
   position: absolute;
@@ -212,7 +222,7 @@ ion-fab-button {
   // }
 }
 .fab.active{
-  transition: all ease-in-out .35s;
+  // 
 
   .item{
     position: absolute;
@@ -266,8 +276,12 @@ ion-fab-button {
   }
 }
 .back-card{
+  transition: all ease-in-out .10s;
   height: 100%;
   overflow-y: auto;
+}
+.front{
+  transition: all ease-in-out .10s;
 }
 .pp-detail{
   // border: #155332 1px solid;
@@ -311,5 +325,147 @@ ion-fab-button {
   width: 70px;
   height: 70px;
   margin-left: -15px;
+  
   // margin-top: 30px;
 }
+
+.hjk{
+  position: relative;
+
+  .close-btn{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    ion-icon{
+      font-size: 36px;
+      // color: #e10000;
+    }
+  }
+
+  .close-btn:hover{
+    background: red;
+    color: white;
+  }
+
+}
+
+.progr.personality{
+  width: 300px;
+  height: 30px;
+  border-radius: 30px;
+  background: #FFFFFF;
+  position: relative;
+  margin-bottom: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  .personality{
+    height: 100%;
+    width: 90%;
+    background-color: #bebebe;
+  border-radius: 30px;
+
+padding: 12px;
+
+  }
+  span{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    font-weight: 700;
+
+  }
+}
+.progr.attractive{
+  width: 300px;
+  height: 30px;
+  border-radius: 30px;
+  background: #FFFFFF;
+  position: relative;
+  margin-bottom: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  .attractive{
+    height: 100%;
+    width: 75%;
+    background-color: #2F724E;
+  border-radius: 30px;
+
+padding: 12px;
+
+  }
+  span{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    font-weight: 700;
+
+  }
+}
+
+.progr.values{
+  width: 300px;
+  height: 30px;
+  border-radius: 30px;
+  background: #FFFFFF;
+  position: relative;
+  margin-bottom: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  .values{
+    height: 100%;
+    width: 56%;
+    background-color: #9D1224;
+  border-radius: 30px;
+
+padding: 12px;
+
+  }
+  span{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    font-weight: 700;
+  }
+}
+
+
+.progr.activity{
+  width: 300px;
+  height: 30px;
+  border-radius: 30px;
+  background: #FFFFFF;
+  position: relative;
+  margin-bottom: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  .activity{
+    height: 100%;
+    width: 56%;
+    background-color: #FCD156;
+  border-radius: 30px;
+
+padding: 12px;
+
+  }
+  span{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    font-weight: 700;
+  }
+}
+
+

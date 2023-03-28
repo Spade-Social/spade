@@ -41,6 +41,7 @@ export class TinderUiComponent {
   crossVisible: boolean;
 addMyClass: boolean = false;
 cards_back: boolean = false;
+hideModal: boolean = false;
 
   constructor(private renderer: Renderer2) {}
 
@@ -167,6 +168,7 @@ cards_back: boolean = false;
     this.toggleChoiceIndicator(false, false);
     this.addMyClass = false;
     this.cards_back = false;
+    this.hideModal = false;
     if (this.shiftRequired) {
       this.shiftRequired = false;
     
@@ -201,8 +203,11 @@ cards_back: boolean = false;
     }
 
     addClass() {
-      console.log(this.addClass);
+      // console.log(this.addClass);
       this.addMyClass = !this.addMyClass;
+    }
+    hideModaal(){
+      this.hideModal = !this.hideModal;
     }
 
 }
