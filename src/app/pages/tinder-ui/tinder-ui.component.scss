@@ -44,7 +44,7 @@
 .tinder--card {
   display: inline-block;
   width: 80%;
-  height: 80%;
+  height: 85%;
   background: #FFFFFF;
   // padding-bottom: 40px;
 border: none;
@@ -61,7 +61,7 @@ border: none;
 }
 
 .tin{
-  height: 80%;
+  height: 82%;
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
@@ -146,18 +146,23 @@ ion-fab-button {
 }
 .fab-box{
   position: fixed;
-  bottom: 11%;
+  bottom: 10%;
   left: 45%;
+}
+
+.fab-box.hi{
+  bottom: 5%;
+  left: 50%;
 }
 .fab{
   position: relative;
   // transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 5s;
 }
 .fab-content{
-  width: 40px;
-  height: 40px;
+  // width: 70px;
+  // height: 70px;
   border-radius: 50%;
-  background: #87d361;
+  border: 1px solid #87d361;
   color: white;
   text-align: center;
   display: flex;
@@ -172,8 +177,8 @@ ion-fab-button {
   z-index: -1;
   .item{
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     // background-color: #155332;
     background: Green;
@@ -189,16 +194,16 @@ ion-fab-button {
   // .item:nth-child(1){
   //   transform: translate(0,50px);
   // }
-  // .item:nth-child(2){
-  //   transform: translate(50px,0);
-  //   background: #e10000 !important;
-  //   font-weight: 900;
-  // }
-  // .item:nth-child(3){
-  //   transform: translate(-65px,0);
-  //   background: #bebebe !important;
-  //   font-weight: 900;
-  // }
+  .item:nth-child(2){
+    // transform: translate(50px,0);
+    background: #e10000 !important;
+    font-weight: 900;
+  }
+  .item:nth-child(3){
+    // transform: translate(-65px,0);
+    background: #bebebe !important;
+    font-weight: 900;
+  }
   // .item:nth-child(4){
   //   transform: translate(0,-60px);
   // }
@@ -211,8 +216,8 @@ ion-fab-button {
 
   .item{
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     // background-color: #155332;
     background: Green;
@@ -238,7 +243,7 @@ ion-fab-button {
 
   }
   .item:nth-child(3){
-    transform: translate(-65px,-10px);
+    transform: translate(-60px,-10px);
     // transition: all ease-in-out .5s;
 
     // opacity: 1;
@@ -246,14 +251,14 @@ ion-fab-button {
 
   }
   .item:nth-child(4){
-    transform: translate(35px,-68px);
+    transform: translate(35px,-60px);
     // transition: all ease-in-out .5s;
 
     // opacity: 1;
 
   }
   .item:nth-child(5){
-    transform: translate(-35px,-65px);
+    transform: translate(-35px,-60px);
     // transition: all ease-in-out .5s;
 
     // opacity: 1;
@@ -294,4 +299,17 @@ ion-fab-button {
     font-size: 12px;
     }
   }
+}
+
+
+.unhi{
+  width: 40px;
+  height: 40px;
+}
+
+.hi{
+  width: 70px;
+  height: 70px;
+  margin-left: -15px;
+  // margin-top: 30px;
 }
