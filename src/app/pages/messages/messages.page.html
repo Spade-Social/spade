@@ -7,23 +7,23 @@
     <h3 class="ion-text-center">Messages</h3>
   </div>
 </div>
-  <ion-list class="ion-padding">
-    <h6>Top 5 picks</h6>
+  <ion-list class="ion-no-padding">
+    <h6 class="ion-margin">Top 5 picks</h6>
     <div class="d-flex ion-justify-content-center g-2">
       <div class="col-2">
-        <img src="assets/icon/feed.png" height="50px" width="50px">
+        <img src="assets/icon/feed.png" height="40px" width="40px">
       </div>
       <div class="col-2 mx-1">
-        <img src="assets/icon/feed.png" height="50px" width="50px">
+        <img src="assets/icon/feed.png" height="40px" width="40px">
       </div>
       <div class="col-2 mx-1">
-        <img src="assets/icon/feed.png" height="50px" width="50px">
+        <img src="assets/icon/feed.png" height="40px" width="40px">
       </div>
       <div class="col-2 mx-1">
-        <img src="assets/icon/feed.png" height="50px" width="50px">
+        <img src="assets/icon/feed.png" height="40px" width="40px">
       </div>
       <div class="col-2 mx-1">
-        <img src="assets/icon/feed.png" height="50px" width="50px">
+        <img src="assets/icon/feed.png" height="40px" width="40px">
       </div>
 
 
@@ -31,7 +31,7 @@
 
     </div>
     <ion-grid class="ion-margin-vertical">
-      <ion-row class="ion-align-items-center g-3">
+      <ion-row class="ion-align-items-center">
         <ion-col size="10">
           <div class="search-bar">
             <input type="search" name="" id="">
@@ -39,8 +39,8 @@
           </div>
         </ion-col>
         <ion-col size="2 " >
-          <ion-buttons (click)="turnFilter()" class="ion-text-center mx-3" >
-            <ion-icon style="font-size: 26px; color: #818181" name="options-outline"></ion-icon>
+          <ion-buttons (click)="turnFilter()" class="ion-text-center" >
+            <ion-icon style="font-size: 36px; color: #818181" name="options-outline"></ion-icon>
           </ion-buttons>
 
         </ion-col>
@@ -67,407 +67,327 @@
 
 <ion-content>
 <div *ngIf="!filterTab" class="ion-padding">
-  <div (click)="gotoChat()" class="custom-card mb-3">
-<div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-  <div class="d-flex mb-3 ion-align-items-center">
-    <div class="position-relative">
-      <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-      <div style="position: absolute; top: -12px; right: -12px">
-        <div style="position: relative">
-          <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-          <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
-        </div>
-
-      </div>
-    </div>
-    <div class="ion-text-left mx-3">
-      <div class="d-flex ">
-        <h5>Maria</h5>
-        <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
-      </div>
-      <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-    </div>
-
-
-
-  </div>
-  <div>
-    <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
-<br>
-    <div>
-      <p style="margin-bottom: -3px">3:40</p>
-      <div style="position: relative">
-        <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-        <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-      </div>
-    </div>
-  </div>
-</div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #d5d5d1" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">3</span>
+ 
+      <div (click)="gotoChat()" class="custom-card mb-1">
+        <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
+          <div class="d-flex mb-3 ion-align-items-center">
+            <div class="position-relative">
+              <img src="/assets/icon/msg.png" height="50px" width="50px" style="border-radius: 50%" alt="">
+              <div style="position: absolute; top: -12px; right: -12px">
+                <div style="position: relative">
+                  <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
+                  <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+                </div>
+        
+              </div>
             </div>
-
-          </div>
-        </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Ashlynn</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
-          </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        my goal is to visit Europe bext year..
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
-        <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+            <div class="ion-text-left mx-3">
+              <div class="d-flex ">
+                <h5 style="font-size:16px; font-weight: 700;">Maria</h5>
+                <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+              </div>
+              <span style="font-size: 12px" class="ion-text-left">
+                Hey! How are you today?
+              </span>
             </div>
-
+        
+        
+        
           </div>
-        </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Maria</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
-          </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
+          <div>
+            <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
         <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+            <div>
+              <p style="margin-bottom: 0px; font-size: 10px;">3:40</p>
+              <div style="position: relative">
+                <ion-icon style="font-size: 20px; color: #bebebe" name="stopwatch-outline"></ion-icon>
+                <span style="font-size: 9px; padding: 5px; position: absolute; top: 9px; right: 9px; background: white">3</span>
+              </div>
             </div>
-
           </div>
         </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Maria</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+            <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
           </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
-        <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+          <div (click)="gotoChat()" class="custom-card mb-1">
+            <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
+              <div class="d-flex mb-3 ion-align-items-center">
+                <div class="position-relative">
+                  <img src="/assets/icon/msg.png" height="50px" width="50px" style="border-radius: 50%" alt="">
+                  <div style="position: absolute; top: -12px; right: -12px">
+                    <div style="position: relative">
+                      <i style="font-size: 40px; color: #d5d5d1" class="bi bi-hexagon-fill"></i>
+                      <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">3</span>
+                    </div>
+        
+                  </div>
+                </div>
+                <div class="ion-text-left mx-3">
+                  <div class="d-flex ">
+                    <h5 style="font-size:16px; font-weight: 700;">Ashlynn</h5>
+                    <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+                  </div>
+                  <span style="font-size: 11px" class="ion-text-left">
+                my goal is to visit Europe bext year...
+              </span>
+                </div>
+        
+        
+        
+              </div>
+              <div>
+                <div class="ion-float-end" style="height: 12px; width: 12px; border-radius: 50%; background: #0d6efd"></div>
+                <br>
+                <div>
+                  <p style="margin-bottom: 0px; font-size: 10px;">3:40</p>
+                  <div style="position: relative; ">
+                    <ion-icon style="font-size: 20px; color: #bebebe" name="stopwatch-outline"></ion-icon>
+                    <span style="font-size: 9px; padding: 5px; position: absolute; top: 10px; right: 7px; background: white">3</span>
+                  </div>
+                </div>
+              </div>
             </div>
-
+            <ion-progress-bar value="0.4" color="medium"></ion-progress-bar>
           </div>
-        </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Maria</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
-          </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
-        <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+          <div (click)="gotoChat()" class="custom-card mb-1">
+            <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
+              <div class="d-flex mb-3 ion-align-items-center">
+                <div class="position-relative">
+                  <img src="/assets/icon/msg.png" height="50px" width="50px" style="border-radius: 50%" alt="">
+                  <div style="position: absolute; top: -12px; right: -12px">
+                    <div style="position: relative">
+                      <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
+                      <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+                    </div>
+            
+                  </div>
+                </div>
+                <div class="ion-text-left mx-3">
+                  <div class="d-flex ">
+                    <h5 style="font-size:16px; font-weight: 700;">Maria</h5>
+                    <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+                  </div>
+                  <span style="font-size: 12px" class="ion-text-left">
+                    Hey! How are you today?
+                  </span>
+                </div>
+            
+            
+            
+              </div>
+              <div>
+                <!-- <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div> -->
+            <br>
+                <div>
+                  <p style="margin-bottom: 0px; font-size: 10px;">3:40</p>
+                  <div style="position: relative">
+                    <ion-icon style="font-size: 20px; color: #bebebe" name="stopwatch-outline"></ion-icon>
+                    <span style="font-size: 9px; padding: 5px; position: absolute; top: 9px; right: 9px; background: white">3</span>
+                  </div>
+                </div>
+              </div>
             </div>
-
-          </div>
-        </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Maria</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
-          </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
-        <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+                <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
+              </div>
+              <div (click)="gotoChat()" class="custom-card mb-1">
+                <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
+                  <div class="d-flex mb-3 ion-align-items-center">
+                    <div class="position-relative">
+                      <img src="/assets/icon/msg.png" height="50px" width="50px" style="border-radius: 50%" alt="">
+                      <div style="position: absolute; top: -12px; right: -12px">
+                        <div style="position: relative">
+                          <i style="font-size: 40px; color: #d5d5d1" class="bi bi-hexagon-fill"></i>
+                          <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">3</span>
+                        </div>
+            
+                      </div>
+                    </div>
+                    <div class="ion-text-left mx-3">
+                      <div class="d-flex ">
+                        <h5 style="font-size:16px; font-weight: 700;">Ashlynn</h5>
+                        <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+                      </div>
+                      <span style="font-size: 11px" class="ion-text-left">
+                    my goal is to visit Europe bext year...
+                  </span>
+                    </div>
+            
+            
+            
+                  </div>
+                  <div>
+                    <div class="ion-float-end" style="height: 12px; width: 12px; border-radius: 50%; background: #0d6efd"></div>
+                    <br>
+                    <div>
+                      <p style="margin-bottom: 0px; font-size: 10px;">3:40</p>
+                      <div style="position: relative; ">
+                        <ion-icon style="font-size: 20px; color: #bebebe" name="stopwatch-outline"></ion-icon>
+                        <span style="font-size: 9px; padding: 5px; position: absolute; top: 10px; right: 7px; background: white">3</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ion-progress-bar value="0.4" color="medium"></ion-progress-bar>
+              </div>
+              <div (click)="gotoChat()" class="custom-card mb-1">
+        <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
+          <div class="d-flex mb-3 ion-align-items-center">
+            <div class="position-relative">
+              <img src="/assets/icon/msg.png" height="50px" width="50px" style="border-radius: 50%" alt="">
+              <div style="position: absolute; top: -12px; right: -12px">
+                <div style="position: relative">
+                  <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
+                  <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+                </div>
+        
+              </div>
             </div>
-
-          </div>
-        </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Maria</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
-          </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
-        <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+            <div class="ion-text-left mx-3">
+              <div class="d-flex ">
+                <h5 style="font-size:16px; font-weight: 700;">Maria</h5>
+                <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+              </div>
+              <span style="font-size: 12px" class="ion-text-left">
+                Hey! How are you today?
+              </span>
             </div>
-
+        
+        
+        
           </div>
-        </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Maria</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
-          </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
+          <div>
+            <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
         <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+            <div>
+              <p style="margin-bottom: -3px">3:40</p>
+              <div style="position: relative">
+                <ion-icon style="font-size: 20px; color: #bebebe" name="stopwatch-outline"></ion-icon>
+                <span style="font-size: 9px; padding: 5px; position: absolute; top: 9px; right: 15px; background: white">3</span>
+              </div>
             </div>
-
           </div>
         </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Maria</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+            <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
           </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
-        <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-  <div (click)="gotoChat()" class="custom-card mb-3">
-    <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
-      <div class="d-flex mb-3 ion-align-items-center">
-        <div class="position-relative">
-          <img src="/assets/icon/msg.png" height="70px" width="70px" style="border-radius: 50%" alt="">
-          <div style="position: absolute; top: -12px; right: -12px">
-            <div style="position: relative">
-              <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
-              <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+          <div (click)="gotoChat()" class="custom-card mb-1">
+            <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
+              <div class="d-flex mb-3 ion-align-items-center">
+                <div class="position-relative">
+                  <img src="/assets/icon/msg.png" height="50px" width="50px" style="border-radius: 50%" alt="">
+                  <div style="position: absolute; top: -12px; right: -12px">
+                    <div style="position: relative">
+                      <i style="font-size: 40px; color: #d5d5d1" class="bi bi-hexagon-fill"></i>
+                      <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">3</span>
+                    </div>
+        
+                  </div>
+                </div>
+                <div class="ion-text-left mx-3">
+                  <div class="d-flex ">
+                    <h5 style="font-size:16px; font-weight: 700;">Ashlynn</h5>
+                    <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+                  </div>
+                  <span style="font-size: 11px" class="ion-text-left">
+                my goal is to visit Europe bext year...
+              </span>
+                </div>
+        
+        
+        
+              </div>
+              <div>
+                <div class="ion-float-end" style="height: 12px; width: 12px; border-radius: 50%; background: #0d6efd"></div>
+                <br>
+                <div>
+                  <p style="margin-bottom: 0px; font-size: 10px;">3:40</p>
+                  <div style="position: relative; ">
+                    <ion-icon style="font-size: 20px; color: #bebebe" name="stopwatch-outline"></ion-icon>
+                    <span style="font-size: 9px; padding: 5px; position: absolute; top: 10px; right: 7px; background: white">3</span>
+                  </div>
+                </div>
+              </div>
             </div>
-
+            <ion-progress-bar value="0.4" color="medium"></ion-progress-bar>
           </div>
-        </div>
-        <div class="ion-text-left mx-3">
-          <div class="d-flex ">
-            <h5>Maria</h5>
-            <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+          <div (click)="gotoChat()" class="custom-card mb-1">
+        <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
+          <div class="d-flex mb-3 ion-align-items-center">
+            <div class="position-relative">
+              <img src="/assets/icon/msg.png" height="50px" width="50px" style="border-radius: 50%" alt="">
+              <div style="position: absolute; top: -12px; right: -12px">
+                <div style="position: relative">
+                  <i style="font-size: 40px; color: #fafa27" class="bi bi-hexagon-fill"></i>
+                  <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">1</span>
+                </div>
+        
+              </div>
+            </div>
+            <div class="ion-text-left mx-3">
+              <div class="d-flex ">
+                <h5 style="font-size:16px; font-weight: 700;">Maria</h5>
+                <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+              </div>
+              <span style="font-size: 12px" class="ion-text-left">
+                Hey! How are you today?
+              </span>
+            </div>
+        
+        
+        
           </div>
-          <span style="font-size: 12px" class="ion-text-left">
-        Hey! How are you today?
-      </span>
-        </div>
-
-
-
-      </div>
-      <div>
-        <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
+          <div>
+            <div class="ion-float-end" style="height: 15px; width: 15px; border-radius: 50%; background: #0d6efd"></div>
         <br>
-        <div>
-          <p style="margin-bottom: -3px">3:40</p>
-          <div style="position: relative">
-            <ion-icon style="font-size: 30px; color: #bebebe" name="stopwatch-outline"></ion-icon>
-            <span style="font-size: 11px; padding: 5px; position: absolute; top: 14px; right: 9px; background: white">3</span>
+            <div>
+              <p style="margin-bottom: -3px">3:40</p>
+              <div style="position: relative">
+                <ion-icon style="font-size: 20px; color: #bebebe" name="stopwatch-outline"></ion-icon>
+                <span style="font-size: 9px; padding: 5px; position: absolute; top: 9px; right: 15px; background: white">3</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
-  </div>
-
+            <ion-progress-bar value="0.4" color="success"></ion-progress-bar>
+          </div>
+          <div (click)="gotoChat()" class="custom-card mb-1">
+            <div class="mx-2 py-2 d-flex align-items-center ion-justify-content-between">
+              <div class="d-flex mb-3 ion-align-items-center">
+                <div class="position-relative">
+                  <img src="/assets/icon/msg.png" height="50px" width="50px" style="border-radius: 50%" alt="">
+                  <div style="position: absolute; top: -12px; right: -12px">
+                    <div style="position: relative">
+                      <i style="font-size: 40px; color: #d5d5d1" class="bi bi-hexagon-fill"></i>
+                      <span style="position: absolute; top:30%; left: 40%; font-weight: bolder; color: white; ">3</span>
+                    </div>
+        
+                  </div>
+                </div>
+                <div class="ion-text-left mx-3">
+                  <div class="d-flex ">
+                    <h5 style="font-size:16px; font-weight: 700;">Ashlynn</h5>
+                    <ion-badge style="background: transparent"><i style="color: limegreen; font-size: 24px" class="bi bi-dot"></i></ion-badge>
+                  </div>
+                  <span style="font-size: 11px" class="ion-text-left">
+                my goal is to visit Europe bext year...
+              </span>
+                </div>
+        
+        
+        
+              </div>
+              <div>
+                <div class="ion-float-end" style="height: 12px; width: 12px; border-radius: 50%; background: #0d6efd"></div>
+                <br>
+                <div>
+                  <p style="margin-bottom: 0px; font-size: 10px;">3:40</p>
+                  <div style="position: relative; ">
+                    <ion-icon style="font-size: 20px; color: #bebebe" name="stopwatch-outline"></ion-icon>
+                    <span style="font-size: 9px; padding: 5px; position: absolute; top: 10px; right: 7px; background: white">3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ion-progress-bar value="0.4" color="medium"></ion-progress-bar>
+          </div>
 
 </div>
   <div class="ion-padding">

@@ -43,7 +43,7 @@
 
 .tinder--card {
   display: inline-block;
-  width: 80%;
+  width: 85%;
   height: 85%;
   background: #FFFFFF;
   // padding-bottom: 40px;
@@ -51,7 +51,7 @@ border: none;
   overflow: hidden;
   position: absolute;
   will-change: transform;
-
+  perspective: 1000px; 
   
   transition: all 0.3s ease-in-out;
   cursor: -webkit-grab;
@@ -73,6 +73,8 @@ position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    // transform: rotateY(180deg);
+    // transition: all ease-in-out .3s;
   }
 
 }
@@ -140,19 +142,7 @@ position: relative;
   outline: 0;
 }
 
-ion-fab{
-  // width: 200px;
-}
-ion-fab-button {
-  --background: #b7f399;
-  --background-activated: #87d361;
-  --background-hover: #a3e681;
-  --border-radius: 15px;
-  --box-shadow: 0px 1px 2px 0px rgba(0,0,0,.3), 0px 1px 3px 1px rgba(0,0,0,.15);
-  --color: black;
 
-
-}
 .fab-box{
   position: fixed;
   bottom: 10%;
@@ -165,26 +155,29 @@ ion-fab-button {
 }
 .fab{
   position: relative;
-  // transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 5s;
+
 }
 .fab-content{
-  // width: 70px;
-  // height: 70px;
+  
   border-radius: 50%;
-  border: 1px solid #87d361;
   color: white;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  cursor: pointer;
+}
+.fab-content:hover{
+  border: #2F724E 2px solid;
+
 }
 .fab-item{
   position: absolute;
   top: 20%;
   left: 20%;
-  z-index: -1;
+  z-index: 1;
   .item{
     position: absolute;
     width: 40px;
@@ -198,31 +191,25 @@ ion-fab-button {
     font-size: 3rem;
     font-weight: bolder;
     color: white;
-    // opacity: 0;
-    // transition: all ease-in-out .5s;
+  
   }
-  // .item:nth-child(1){
-  //   transform: translate(0,50px);
-  // }
+ 
   .item:nth-child(2){
-    // transform: translate(50px,0);
+    
     background: #e10000 !important;
     font-weight: 900;
   }
   .item:nth-child(3){
-    // transform: translate(-65px,0);
     background: #bebebe !important;
     font-weight: 900;
   }
-  // .item:nth-child(4){
-  //   transform: translate(0,-60px);
-  // }
-  // .item:nth-child(5){
-  //   transform: translate(35px,-65px);
-  // }
+ 
 }
 .fab.active{
   // 
+
+
+
 
   .item{
     position: absolute;
@@ -241,47 +228,34 @@ ion-fab-button {
   }
   .item:nth-child(1){
     transform: translate(-10px,40px);
-    // transition: dis ease-in-out .5s;
 
-    // opacity: 1;
   }
   .item:nth-child(2){
     transform: translate(40px,-10px);
-    // transition: all ease-in-out .5s;
-
-    // opacity: 1;
+   
 
   }
   .item:nth-child(3){
     transform: translate(-60px,-10px);
-    // transition: all ease-in-out .5s;
-
-    // opacity: 1;
-
 
   }
   .item:nth-child(4){
     transform: translate(35px,-60px);
-    // transition: all ease-in-out .5s;
-
-    // opacity: 1;
 
   }
   .item:nth-child(5){
     transform: translate(-35px,-60px);
-    // transition: all ease-in-out .5s;
-
-    // opacity: 1;
+   
 
   }
 }
 .back-card{
-  transition: all ease-in-out .10s;
+  // transition: all ease-in-out .10s;
   height: 100%;
   overflow-y: auto;
 }
 .front{
-  transition: all ease-in-out .10s;
+  // transition: all ease-in-out .10s;
 }
 .pp-detail{
   // border: #155332 1px solid;
@@ -315,6 +289,11 @@ ion-fab-button {
   }
 }
 
+.tin{
+
+  // transform: rotateY(180deg);
+  transition: all ease-in-out .3s;
+}
 
 .unhi{
   width: 40px;
@@ -331,6 +310,9 @@ ion-fab-button {
 
 .hjk{
   position: relative;
+  padding: 10px 20px;
+  width: 100%;
+
 
   .close-btn{
     height: 40px;
@@ -342,7 +324,7 @@ ion-fab-button {
     background: white;
     position: absolute;
     top: 6px;
-    right: 10px;
+    right: 11px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     ion-icon{
@@ -359,7 +341,8 @@ ion-fab-button {
 }
 
 .progr.personality{
-  width: 300px;
+  justify-self: center;
+  width: 95%;
   height: 30px;
   border-radius: 30px;
   background: #FFFFFF;
@@ -386,7 +369,7 @@ padding: 12px;
   }
 }
 .progr.attractive{
-  width: 300px;
+  width: 95%;
   height: 30px;
   border-radius: 30px;
   background: #FFFFFF;
@@ -396,6 +379,7 @@ padding: 12px;
   .attractive{
     height: 100%;
     width: 75%;
+    
     background-color: #2F724E;
   border-radius: 30px;
 
@@ -414,7 +398,7 @@ padding: 12px;
 }
 
 .progr.values{
-  width: 300px;
+  width: 95%;
   height: 30px;
   border-radius: 30px;
   background: #FFFFFF;
@@ -442,7 +426,7 @@ padding: 12px;
 
 
 .progr.activity{
-  width: 300px;
+  width:95%;
   height: 30px;
   border-radius: 30px;
   background: #FFFFFF;

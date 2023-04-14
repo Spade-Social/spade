@@ -25,12 +25,12 @@
 </div>
   <div class="tinder--cards" (pan)="handlePan($event)" (panend)="handlePanEnd($event)" >
     <div #tinderCard class="tinder--card" (transitionend)="handleShift()" *ngFor="let card of cards; let i = index"
-    [ngStyle]="{ zIndex: cards.length - i, transform: 'scale(' + (22 - i) / 20 + ') translateY(-' + 20 * i + 'px)' }">
+    [ngStyle]="{ zIndex: cards.length - i, transform: 'scale(' + (21 - i) / 21 + ') translateY(-' + 25 * i + 'px) translateX(' + 13 * i + 'px)' }">
     <div class="tin">
       <div class="front"  *ngIf="!cards_back"  [style.background-image]="'url(' + card.img + ')'" >
 
       </div>
-      <div class="p-2 back-card" *ngIf="cards_back">
+      <div class="p-2 back-card"  *ngIf="cards_back">
   
         <div class="row ">
           <div class="col-6" style="border-right: 1px solid #bebebe;">
@@ -250,7 +250,7 @@
       </div>
       <div class="top-tin" *ngIf="hideModal">
         <div class="d-flex justify-content-center my-3">
-          <div class="hjk">
+          <div class="hjk ">
             <span>
               <svg width="195" height="180" viewBox="0 0 183 174" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M58.8125 12.5701C67.0721 9.79437 75.7289 8.38323 84.4425 8.39213V88.8861L58.8125 12.5701Z" fill="#FFDC5E" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
@@ -305,12 +305,12 @@
       
     </div>
    
-<div class="fab-box" [class.hi]="!addMyClass">
+ <div class="fab-box" [class.hi]="!addMyClass">
   <div class="fab " [class.active]="addMyClass">
-    <div class="fab-content" [ngClass]="addMyClass ? 'unhi' : 'hi'"   (click)="addClass()">
-      <!-- <ion-icon name="add" ></ion-icon> -->
+    <div class="fab-content" [class]="addMyClass ? 'unhi' : 'hi'"  (click)="addClass()">
+    
       <span>
-        <svg  width="54" height="54" viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg  width="100" height="70" viewBox="0 0 53 54" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d_1646_18601)">
           <path d="M26.4999 40.7733C36.0387 40.7733 43.7714 33.0406 43.7714 23.5019C43.7714 13.9632 36.0387 6.23047 26.4999 6.23047C16.9612 6.23047 9.22852 13.9632 9.22852 23.5019C9.22852 33.0406 16.9612 40.7733 26.4999 40.7733Z" stroke="white" stroke-width="4.45714"/>
           </g>
@@ -373,13 +373,7 @@
         
 
       </div>
-      <!-- <div class="item" (click)="change()">
-        <span><svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M28.4982 19.9601L25.7821 14.001L7 22.5624L18.9868 48.8571L19.0099 48.845V48.8571H39.6518V19.9601H28.4982ZM8.61294 23.4923L25.4275 15.8275L27.3114 19.9601H19.0109V46.3022L8.61294 23.4923Z" fill="white"/>
-          <path d="M35.4166 35.0042C35.4166 38.2177 32.8086 40.8258 29.595 40.8258C26.3815 40.8258 24.4196 37.589 24.4196 37.589M24.4196 37.589H27.051M24.4196 37.589V40.4998M23.7734 35.0042C23.7734 31.7907 26.3582 29.1826 29.595 29.1826C33.478 29.1826 35.4166 32.4194 35.4166 32.4194M35.4166 32.4194V29.5086M35.4166 32.4194H32.8319" stroke="#155332" stroke-width="1.74648" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          </span>
-      </div> -->
+   
       <div class="item" (click)="hideModaal()">
         <ion-icon name="thermometer-outline"></ion-icon>
   

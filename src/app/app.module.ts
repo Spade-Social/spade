@@ -11,6 +11,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxSpinnerModule} from "ngx-spinner";
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 // import { TinderUiComponent } from './pages/tinder-ui/tinder-ui.component';
 
 @NgModule({
@@ -42,7 +43,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       animationDuration: 300,
     })
 ],
-  providers: [SplashScreen,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [SplashScreen, StatusBar, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

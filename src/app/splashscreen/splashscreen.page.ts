@@ -11,16 +11,22 @@ export class SplashscreenPage implements OnInit {
 
   constructor(public plt: Platform, private router: Router) {
     plt.ready().then(()=>{
-      if (plt.is('android')){
-
+      // if (plt.is('android')){
+        const uid = localStorage.getItem('token');
+       
         setTimeout(()=>{
-          this.router.navigate(['/index']);
-        },1000);
+          if(uid && uid !== null && uid !== 'null'){
+            this.router.navigateByUrl('/tabs');
+          }else{
+            this.router.navigateByUrl('/index');
+          }
+         
+        },500);
 
-      }else{
-        this.router.navigate(['/index']);
-        window.location.href = '/index';
-      }
+      // }else{
+      //   this.router.navigate(['/index']);
+      //   window.location.href = '/index';
+      // }
     });
    }
 
