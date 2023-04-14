@@ -1,14 +1,30 @@
-import { Component} from '@angular/core';
+import { Component, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { IonCard } from '@ionic/angular';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-discover',
   templateUrl: './discover.page.html',
   styleUrls: ['./discover.page.scss'],
+  animations: [
+    trigger('cardSwipe', [
+      transition(':enter', [
+        style({ transform: 'scale(0.8)' }),
+        animate('200ms ease-in-out', style({ transform: 'scale(1)' }))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in-out', style({ transform: 'scale(0.8)' }))
+      ])
+    ])
+  ]
 })
 export class DiscoverPage {
-  cards: any = [];
+  @ViewChild(IonCard) card: ElementRef;
+  cards: any[] = []; // Replace with your actual card data
+  currentIndex = 0;
 
-  constructor() {
+
+  constructor(private renderer: Renderer2, private el: ElementRef) {
 
     // this.cards = [];
 this.loadTinderCards();
@@ -65,4 +81,35 @@ this.loadTinderCards();
       this.loadTinderCards();
     }
   };
+
+  // onSwipeLeft() {
+  //   // Handle swipe left action, e.g., remove card from the stack or trigger some other action
+  //   this.renderer.setStyle(this.card.nativeElement, 'transform', 'translateX(-1000px)');
+  //   this.renderer.setStyle(this.card.nativeElement, 'opacity', '0');
+  //   this.currentIndex++;
+  // }
+
+  // onSwipeRight() {
+  //   // Handle swipe right action, e.g., remove card from the stack or trigger some other action
+  //   this.renderer.setStyle(this.card.nativeElement, 'transform', 'translateX(1000px)');
+  //   this.renderer.setStyle(this.card.nativeElement, 'opacity', '0');
+  //   this.currentIndex++;
+  // }
+  onSwipeLeft() {
+    // Handle swipe left action, e.g., remove card from the stack or trigger some other action
+    this.card.nativeElement.classList.add('swipe-left'); // Add swipe-left class for animation
+    setTimeout(() => {
+      this.currentIndex++;
+      this.card.nativeElement.classList.remove('swipe-left'); // Remove swipe-left class after animation
+    }, 300); // Delay to allow animation to finish
+  }
+
+  onSwipeRight() {
+    // Handle swipe right action, e.g., remove card from the stack or trigger some other action
+    this.card.nativeElement.classList.add('swipe-right'); // Add swipe-right class for animation
+    setTimeout(() => {
+      this.currentIndex++;
+      this.card.nativeElement.classList.remove('swipe-right'); // Remove swipe-right class after animation
+    }, 300); // Delay to allow animation to finish
+  }
 }

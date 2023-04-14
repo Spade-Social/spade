@@ -1,0 +1,4 @@
+<ion-card (pan)="onCardSwipe($event)" *ngFor="let item of cards" #card>
+  <!-- Card content goes here -->
+  <img src="{{item.img}}" height="500px" width="100%" alt="">
+</ion-card>

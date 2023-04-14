@@ -67,6 +67,7 @@ hideModal: boolean = false;
     }
     this.shiftRequired = true;
     this.transitionInProgress = true;
+    console.log(this.tinderCardsArray,"CHECKING", this.cards[0]);
   }
 
   handlePan(event) {
@@ -156,7 +157,7 @@ hideModal: boolean = false;
   }
 
 
- 
+
 
   toggleChoiceIndicator(cross, heart) {
     this.crossVisible = cross;
@@ -171,7 +172,7 @@ hideModal: boolean = false;
     this.hideModal = false;
     if (this.shiftRequired) {
       this.shiftRequired = false;
-    
+
       this.cards.shift();
     }
   }
@@ -206,8 +207,9 @@ hideModal: boolean = false;
       // console.log(this.addClass);
       this.addMyClass = !this.addMyClass;
     }
-    hideModaal(){
+    hideModaal(event){
       this.hideModal = !this.hideModal;
+      console.log(event.id);
     }
 
 }

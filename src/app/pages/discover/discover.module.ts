@@ -10,6 +10,7 @@ import { DiscoverPage } from './discover.page';
 import { TinderUiComponent } from '../tinder-ui/tinder-ui.component';
 import {HammerModule} from "@angular/platform-browser";
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { CardComponent } from 'src/app/components/card/card.component';
 // import { TinderUiComponent } from '../tinder-ui/tinder-ui.component';
 
 @NgModule({
@@ -21,6 +22,6 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     HammerModule,
     NgCircleProgressModule
   ],
-  declarations: [DiscoverPage, TinderUiComponent ]
+  declarations: [DiscoverPage, TinderUiComponent, CardComponent ]
 })
 export class DiscoverPageModule {}
