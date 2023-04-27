@@ -17,7 +17,9 @@ import { Router } from '@angular/router';
   ]
 })
 export class TabsPage implements OnInit {
+
 tabSelected: any = 'dashboard';
+setCard: boolean = false;
 onTabSelected(item) {
 console.log(item);
 this.tabSelected = item;
@@ -46,6 +48,15 @@ this.getUrl();
     const me = fg.split('/');
     console.log("splirtted",me[2]);
     this.tabSelected = me[2];
+  }
+
+  changeCard() {
+    if(!this.setCard){
+      this.setCard = true;
+    }else{
+      this.setCard = false
+    }
+    console.log(this.setCard);
   }
 
 }

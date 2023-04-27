@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./chat.page.scss'],
 })
 export class ChatPage implements OnInit {
-
+  isCallModalOpen = false;
 
   constructor(
     private router: Router
@@ -20,4 +20,8 @@ export class ChatPage implements OnInit {
     this.router.navigate(['/tabs/messages'])
     }
 
+
+    setCallOpen(item){
+this.isCallModalOpen = item
+    }
 }
