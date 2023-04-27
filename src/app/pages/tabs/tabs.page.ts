@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,18 +21,31 @@ tabSelected: any = 'dashboard';
 onTabSelected(item) {
 console.log(item);
 this.tabSelected = item;
-// if(item == 'discover'){
-//   alert('working');
-// }
+
 }
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     // let g = window.location.href;
     // console.log( g.valueOf());
    
    }
 
   ngOnInit() {
+this.getUrl();
+  }
+
+  ionViewWillEnter(){
+   this.getUrl();
+  }
+
+  getUrl(){
+    console.log(this.router.url);
+    const fg = this.router.url;
+    const me = fg.split('/');
+    console.log("splirtted",me[2]);
+    this.tabSelected = me[2];
   }
 
 }
